@@ -275,9 +275,5 @@ Focus on:
     </div>
   );
 }
-      </div>
-    </div>
-  );
-}
 
 export default App;
