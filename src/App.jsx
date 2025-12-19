@@ -117,128 +117,35 @@ Focus on:
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Gradient Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-purple-600 via-pink-600 via-blue-600 to-cyan-500 animate-gradient-xy"></div>
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-      
-      {/* Animated Blobs */}
-      <div className="fixed top-0 -left-4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div className="fixed top-0 -right-4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div className="fixed -bottom-8 left-20 w-96 h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-
-      <style>{`
-        @keyframes gradient-xy {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-gradient-xy {
-          background-size: 200% 200%;
-          animation: gradient-xy 15s ease infinite;
-        }
-        @keyframes blob {
-          0%, 100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-        @keyframes pulse-glow {
-          0%, 100% {
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-          }
-          50% {
-            box-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(236, 72, 153, 0.4);
-          }
-        }
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-      `}</style>
-
-      <div className="relative z-10 container mx-auto px-4 py-6 lg:py-12">
-        {/* Vibrant Header */}
-        <header className="text-center mb-10 lg:mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-400 rounded-3xl shadow-2xl mb-6 transform hover:scale-110 transition-transform duration-300 animate-float animate-pulse-glow">
-            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-          </div>
-          <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 drop-shadow-2xl">
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-8 lg:py-12 max-w-7xl">
+        {/* Clean Header */}
+        <header className="mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h1 className="text-3xl lg:text-4xl font-semibold text-gray-900 tracking-tight">
               Code Review
-            </span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-200 via-blue-200 to-purple-200">
-              Assistant
-            </span>
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto font-medium mb-8 drop-shadow-lg">
-            ⚡ Instant professional code analysis with AI-powered insights
-          </p>
-          
-          {/* Animated Feature Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
-            <span className="px-5 py-2.5 bg-white/20 backdrop-blur-md text-white text-sm font-bold rounded-full border-2 border-white/30 shadow-xl hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-default">
-              🔒 Security Analysis
-            </span>
-            <span className="px-5 py-2.5 bg-white/20 backdrop-blur-md text-white text-sm font-bold rounded-full border-2 border-white/30 shadow-xl hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-default">
-              ⚡ Performance Review
-            </span>
-            <span className="px-5 py-2.5 bg-white/20 backdrop-blur-md text-white text-sm font-bold rounded-full border-2 border-white/30 shadow-xl hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-default">
-              ✨ Best Practices
-            </span>
-            <span className="px-5 py-2.5 bg-white/20 backdrop-blur-md text-white text-sm font-bold rounded-full border-2 border-white/30 shadow-xl hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-default">
-              🚀 Instant Feedback
-            </span>
+            </h1>
           </div>
+          <p className="text-gray-600 text-lg max-w-2xl">
+            Get instant, professional code analysis with actionable feedback on security, performance, and best practices.
+          </p>
         </header>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}
-          <div className="space-y-6">
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-white/20 p-6 lg:p-8 transform hover:scale-[1.02] transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-white drop-shadow-lg">Code Input</h2>
-              </div>
+          <div>
+            <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 lg:p-8">
+              <h2 className="text-lg font-semibold text-gray-900 mb-6">Input</h2>
               
               {/* API Key Input */}
               <div className="mb-6">
-                <label className="block text-sm font-bold text-white/90 mb-2 drop-shadow">
-                  🔑 API Key
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  API Key
                 </label>
                 <div className="relative">
                   <input
@@ -246,12 +153,12 @@ Focus on:
                     value={apiKey}
                     onChange={(e) => setApiKey(e.target.value)}
                     placeholder="Enter your API key"
-                    className="w-full px-4 py-3.5 bg-white/20 backdrop-blur-md border-2 border-white/30 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-400/50 focus:border-purple-400 transition-all text-white placeholder-white/60 font-medium shadow-lg"
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm"
                   />
                   <button
                     type="button"
                     onClick={() => setShowApiKey(!showApiKey)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                   >
                     {showApiKey ? (
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -265,9 +172,9 @@ Focus on:
                     )}
                   </button>
                 </div>
-                <p className="text-xs text-white/70 mt-2">
-                  Get your free API key from{' '}
-                  <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-200 font-bold underline">
+                <p className="text-xs text-gray-500 mt-1.5">
+                  Get your API key from{' '}
+                  <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:underline font-medium">
                     console.groq.com
                   </a>
                 </p>
@@ -275,14 +182,14 @@ Focus on:
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-bold text-white/90 mb-2 drop-shadow">
-                    💻 Code to Review
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Code
                   </label>
                   <textarea
                     value={codeInput}
                     onChange={(e) => setCodeInput(e.target.value)}
                     placeholder="// Paste your code here...&#10;&#10;function example() {&#10;  // Your code&#10;}"
-                    className="w-full h-72 px-4 py-3 bg-black/30 backdrop-blur-md border-2 border-white/20 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-400/50 focus:border-purple-400 font-mono text-sm text-white placeholder-white/50 resize-none shadow-xl transition-all"
+                    className="w-full h-64 px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-mono text-sm resize-none"
                   />
                 </div>
 
@@ -290,29 +197,24 @@ Focus on:
                   <button
                     type="submit"
                     disabled={isLoading || !codeInput.trim()}
-                    className="flex-1 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-purple-500 hover:via-pink-500 hover:to-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 active:scale-95"
+                    className="flex-1 bg-gray-900 text-white py-2.5 px-4 rounded-md font-medium hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm"
                   >
                     {isLoading ? (
-                      <span className="flex items-center justify-center gap-3">
-                        <svg className="animate-spin h-6 w-6" fill="none" viewBox="0 0 24 24">
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        <span>Analyzing Code...</span>
+                        Analyzing...
                       </span>
                     ) : (
-                      <span className="flex items-center justify-center gap-3">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>🚀 Review Code</span>
-                      </span>
+                      'Review Code'
                     )}
                   </button>
                   <button
                     type="button"
                     onClick={clearAll}
-                    className="px-6 py-4 bg-white/20 backdrop-blur-md border-2 border-white/30 text-white rounded-xl font-bold hover:bg-white/30 hover:border-white/50 transition-all shadow-lg transform hover:scale-105 active:scale-95"
+                    className="px-4 py-2.5 border border-gray-300 text-gray-700 rounded-md font-medium hover:bg-gray-50 transition-colors text-sm"
                   >
                     Clear
                   </button>
@@ -320,12 +222,12 @@ Focus on:
               </form>
 
               {error && (
-                <div className="mt-4 p-4 bg-red-500/20 backdrop-blur-md border-2 border-red-400 rounded-xl">
+                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md">
                   <div className="flex items-center gap-2">
-                    <svg className="w-6 h-6 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <p className="text-red-100 font-bold">{error}</p>
+                    <p className="text-red-700 text-sm font-medium">{error}</p>
                   </div>
                 </div>
               )}
@@ -333,36 +235,19 @@ Focus on:
           </div>
 
           {/* Output Section */}
-          <div className="space-y-6">
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-white/20 p-6 lg:p-8 transform hover:scale-[1.02] transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-br from-green-400 to-cyan-500 rounded-xl">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-white drop-shadow-lg">Review Results</h2>
-              </div>
+          <div>
+            <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 lg:p-8">
+              <h2 className="text-lg font-semibold text-gray-900 mb-6">Results</h2>
               
               {isLoading && (
-                <div className="flex flex-col items-center justify-center py-16">
-                  <div className="relative">
-                    <div className="w-20 h-20 border-4 border-white/30 border-t-cyan-400 rounded-full animate-spin shadow-2xl"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="mt-6 text-white font-bold text-lg drop-shadow">Analyzing your code...</p>
-                  <p className="mt-2 text-sm text-white/80">🔍 Checking security • ⚡ Performance • ✨ Best practices</p>
+                <div className="flex flex-col items-center justify-center py-12">
+                  <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin mb-4"></div>
+                  <p className="text-gray-600 text-sm font-medium">Analyzing code...</p>
                 </div>
               )}
 
               {reviewResult && (
-                <div className="prose prose-invert max-w-none prose-headings:text-white prose-headings:font-bold prose-p:text-white/90 prose-ul:text-white/90 prose-li:text-white/90 prose-strong:text-white prose-code:text-cyan-300 prose-code:bg-black/30 prose-code:px-2 prose-code:py-1 prose-code:rounded-lg prose-code:font-mono prose-a:text-cyan-300 prose-a:no-underline hover:prose-a:underline">
+                <div className="prose prose-sm max-w-none prose-headings:font-semibold prose-headings:text-gray-900 prose-p:text-gray-700 prose-ul:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-code:text-gray-900 prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-a:text-gray-900 prose-a:no-underline hover:prose-a:underline">
                   <div 
                     className="markdown-content"
                     dangerouslySetInnerHTML={{ 
@@ -373,26 +258,23 @@ Focus on:
               )}
 
               {!reviewResult && !isLoading && (
-                <div className="text-center py-16">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500/30 to-pink-500/30 backdrop-blur-md rounded-full mb-6 border-2 border-white/20 shadow-xl">
-                    <svg className="w-10 h-10 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="text-center py-12">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full mb-4">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
-                  <p className="text-white font-bold text-lg mb-2 drop-shadow">✨ Ready for Review</p>
-                  <p className="text-sm text-white/70">Enter your code and click "Review Code" to get instant professional feedback</p>
+                  <p className="text-gray-600 font-medium mb-1">Ready for review</p>
+                  <p className="text-sm text-gray-500">Enter your code and click "Review Code" to get feedback</p>
                 </div>
               )}
             </div>
           </div>
         </div>
-
-        {/* Vibrant Footer */}
-        <footer className="text-center mt-12 pt-8 border-t border-white/20">
-          <p className="text-white/80 text-sm font-medium">
-            Built with <span className="text-white font-bold">React</span> • <span className="text-white font-bold">Vite</span> • <span className="text-white font-bold">Tailwind CSS</span>
-          </p>
-        </footer>
+      </div>
+    </div>
+  );
+}
       </div>
     </div>
   );
