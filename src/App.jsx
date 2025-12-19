@@ -172,12 +172,6 @@ Focus on:
                     )}
                   </button>
                 </div>
-                <p className="text-xs text-gray-500 mt-1.5">
-                  Get your API key from{' '}
-                  <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:underline font-medium">
-                    console.groq.com
-                  </a>
-                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
